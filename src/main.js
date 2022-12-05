@@ -124,12 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
       moveStrait();
     }
   }
+  function check(movement, id) {
+    if (movement) {
+      clearInterval(id);
+      movment = false;
+    }
+  }
 
   function moveLeft() {
-    if (isGoingRight) {
-      clearInterval(rightTimerId);
-      isGoingRight = false;
-    }
+    check(isGoingRight, rightTimerId);
     isGoingLeft = true;
     leftTimerId = setInterval(() => {
       if (doodlerLeftSpace >= 0) {
@@ -140,10 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function moveRight() {
-    if (isGoingLeft) {
-      clearInterval(leftTimerId);
-      isGoingLeft = false;
-    }
+    check(isGoingLeft, lefttTimerId);
     isGoingRight = true;
     rightTimerId = setInterval(() => {
       if (doodlerLeftSpace <= 340) {
