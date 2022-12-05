@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       moveStrait();
     }
   }
+
   function check(movement, id) {
     if (movement) {
       clearInterval(id);
@@ -143,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function moveRight() {
-    check(isGoingLeft, lefttTimerId);
+    check(isGoingLeft, leftTimerId);
     isGoingRight = true;
     rightTimerId = setInterval(() => {
       if (doodlerLeftSpace <= 340) {
