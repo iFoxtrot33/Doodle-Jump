@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function createDoodler() {
     grid.appendChild(doodler);
     doodler.classList.add('doodler');
+    doodlerLeftSpace = platforms[0].left
     doodler.style.left = doodlerLeftSpace + 'px';
     doodler.style.bottom = doodlerBottomSpace + 'px';
   };
-  createDoodler();
+
 
   class Platform {
     constructor(newPlatformBottom) {
@@ -81,10 +82,20 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(downTimerId);
   }
 
+  function control() {
+    if (e.key === 'ArrowLeft') {
+        //move left
+    } else if (e.key === 'ArrowRight') {
+        //move right
+    } else if (e.key === 'ArrowUp') {
+        //move straight
+    }
+  }
+
   function start() {
     if (!isGameOver) {
-        createDoodler();
         createPlatforms();
+        createDoodler();
         setInterval(movePlatforms, 30);
         jump()
     }
