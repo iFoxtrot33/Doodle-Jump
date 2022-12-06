@@ -21,3 +21,15 @@
   position: absolute;
   background-image: url('../imgs/platform.png');
 }
+
+.hide {
+  display: none;
+}
+
+.btn {
+  position: relative;
+  bottom: -250px;
+  width: 250px;
+  height: 80px;
+  font-size: 30px;
+}

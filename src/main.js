@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
   const doodler = document.createElement('div');
+  const button = document.querySelector('.btn');
   let doodlerLeftSpace = 50;
   let startPoint = 150;
   let doodlerBottomSpace = startPoint;
@@ -125,16 +126,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function check(movement, id) {
+  function check(movement, id, oposite) {
     if (movement) {
       clearInterval(id);
       movment = false;
     }
+    // eslint-disable-next-line no-unused-vars
+    oposite = true;
   }
 
   function moveLeft() {
-    check(isGoingRight, rightTimerId);
-    isGoingLeft = true;
+    check(isGoingRight, rightTimerId, isGoingLeft);
     leftTimerId = setInterval(() => {
       if (doodlerLeftSpace >= 0) {
         doodlerLeftSpace -= 5;
@@ -144,8 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function moveRight() {
-    check(isGoingLeft, leftTimerId);
-    isGoingRight = true;
+    check(isGoingLeft, leftTimerId, isGoingRight);
     rightTimerId = setInterval(() => {
       if (doodlerLeftSpace <= 340) {
         doodlerLeftSpace += 5;
@@ -170,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.addEventListener('keyup', control);
     }
   }
-  // attach to button
-  start();
+  button.addEventListener('click', () => {
+    button.classList.add('hide');
+    start();
+  });
 });
