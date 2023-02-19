@@ -1,7 +1,7 @@
 # 🎮Doodle Jump Game
 
 ## ℹAbout:
-This is a descktop game, clone of doodle jump mobile game.
+This is a desktop game, a clone of the doodle jump mobile game.
 
 ## 💻To deploy localy:
 ```
