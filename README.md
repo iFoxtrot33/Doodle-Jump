@@ -5,7 +5,7 @@ This is a desktop game, a clone of the doodle jump mobile game.
 
 ## 💻To deploy localy:
 ```
-1)git clone
+1)git clone https://github.com/iFoxtrot33/Doodle-Jump.git
 2)cd Doodle-Jump
 3)make install
 ```
